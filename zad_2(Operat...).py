@@ -1,7 +1,8 @@
 
 
-int wynik
+
 
 def mnozenie(pierwszy,drugi):
-    wynik = print * drugi
+    wynik = pierwszy * drugi
     return(wynik)
+
