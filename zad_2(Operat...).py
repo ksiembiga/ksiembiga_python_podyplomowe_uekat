@@ -1,8 +1,7 @@
-from calendar import firstweekday
 
 
+int wynik
 
 def mnozenie(pierwszy,drugi):
-    wynik = first * second
-    int wynik
+    wynik = print * drugi
     return(wynik)

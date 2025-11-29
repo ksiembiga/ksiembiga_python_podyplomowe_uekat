@@ -2,13 +2,17 @@
 #Utwórz funkcję, która otrzyma w parametrze listę 10 liczb
 #(rekomendowane wykorzystanie funkcji range), a następnie wyświetli co drugi element.
 
-#NIe SKONCZONE
+
 lista = []
-def co_drugi():
-    for i in range(10):
-        liczb = str(i)
-        lista = list.append(liczb)
+##def co_drugi():
+for i in range(10):
+    lista.append(i)
+for i, element in enumerate(lista):
+    if i % 2 == 0:
+        print(element)
 
 
 
-print(lista )
+
+
+
