@@ -10,9 +10,8 @@ class Library:
         self.phone = phone
 
     def __str__(self):
-        print("Adres:" + self.street + ", " + self.zip_code + " " + self.city + ", " )
-        print("Godziny otwarcia: " + self.open_hours)
-        print("Telefon: " + self.phone)
+        return (f"Adres:  {self.street}, {self.zip_code}, {self.city}, Godziny otwarcia: {self.open_hours}, Telefon: {self.phone}")
+
 
 class Employee:
     def __init__(self, first_name, last_name, hire_data, birth_date, city, street, zip_code, phone):
@@ -25,11 +24,7 @@ class Employee:
         self.zip_code = zip_code
         self.phone = phone
     def __str__(self):
-        print("Imię i nazwisko pracownika: " + self.first_name + " " + self.last_name)
-        print("Data urodzenia: " + self.birth_date)
-        print("Data zatrudnienia: " + self.hire_data)
-        print("Telefon: " + self.phone)
-        print("Dane pracownika: " + self.street + ", " + self.zip_code + " " + self.city)
+        return (f"Imię i nazwisko pracownika: {self.first_name} {self.last_name}, Data urodzenia: {self.birth_date}, Data zatrudnienia: {self.hire_data} Telefon: {self.phone}, Dane pracownika: {self.street}, {self.zip_code}, {self.city}")
 
 class Book:
     def __init__(self, title, library, publication_date, author_name, author_surname, number_of_pages):
@@ -40,10 +35,7 @@ class Book:
         self.author_surname = author_surname
         self.number_of_pages = number_of_pages
     def __str__(self):
-        print("Autor: " + self.author_name + " " + self.author_surname)
-        print("Liczba stron: " + self.number_of_pages)
-        print("Data wydania: " + self.publication_date)
-        print("Biblioteka: " + self.library)
+        return(f"Autor:{self.author_name}, {self.author_surname}, Liczba stron: {self.number_of_pages}, Data wydania: {self.publication_date}, Biblioteka: {self.library}")
 
 class Order:
     def __init__(self, employee, student, books, order_date):
@@ -53,10 +45,7 @@ class Order:
         self.order_date = order_date
 
     def __str__(self):
-        print("Pracownik: " + self.employee)
-        print("Wypozyczył: " + self.student)
-        print("Książki: " + self.books)
-        print("Data zamówienia: " + self.order_date)
+        return(f"Pracownik: {self.employee}, Wypozyczył: {self.student}, Książki:{self.books}, Data zamówienia:{self.order_date}")
 
 
 
@@ -66,7 +55,7 @@ class Student:
         self.last_name = last_name
 
     def __str__(self):
-        print('Student: ' +self.first_name + ' ' + self.last_name)
+        return(f'Student: + {self.first_name}  + {self.last_name}')
 
 
 #Biblioteki
@@ -91,7 +80,8 @@ zamowienie1 = Order(employee= jan_nowak.first_name + jan_nowak.last_name, studen
 zamowienie2 = Order(employee=jan_kowalski.first_name + jan_kowalski.last_name, student=Ambrozy_Kleks.first_name + Ambrozy_Kleks.last_name, books= historia_chorzowa.title + Niemiecki_nie_gryzie.title, order_date= '4-2-2026')
 
 
-
+print(zamowienie1)
+print(zamowienie2)
 
 
 
