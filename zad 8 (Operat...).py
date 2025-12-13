@@ -50,6 +50,9 @@ def pobierz_browary(api_url: str, limit: int = 20) -> list[Browar]:
         print(f"❌ Wystąpił błąd podczas pobierania danych z API: {e}")
         return []
 
+print ("Wybierz miasto: ")
+miasto = input()
+
 if __name__ == "__main__":
     api_url = "https://api.openbrewerydb.org/v1/breweries"
     liczba_browarow = 20
