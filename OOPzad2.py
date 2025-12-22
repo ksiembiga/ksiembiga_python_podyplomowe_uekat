@@ -1,5 +1,4 @@
-
-
+import Libraries_project_class
 
 class Library:
     def __init__(self, city, street, zip_code, open_hours, phone):
@@ -24,7 +23,9 @@ class Employee:
         self.zip_code = zip_code
         self.phone = phone
     def __str__(self):
-        return (f"Imię i nazwisko pracownika: {self.first_name} {self.last_name}, Data urodzenia: {self.birth_date}, Data zatrudnienia: {self.hire_data} Telefon: {self.phone}, Dane pracownika: {self.street}, {self.zip_code}, {self.city}")
+        return (f"Imię i nazwisko pracownika: {self.first_name} {self.last_name}, Data urodzenia: {self.birth_date}, Data zatrudnienia: {self.hire_data} "
+                f"Telefon: {self.phone}, Dane pracownika: {self.street}, {self.zip_code}, {self.city}")
+
 
 class Book:
     def __init__(self, title, library, publication_date, author_name, author_surname, number_of_pages):
