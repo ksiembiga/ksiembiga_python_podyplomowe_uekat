@@ -47,7 +47,7 @@ def pobierz_browary(api_url: str, limit: int = 20) -> list[Browar]:
             browary_lista.append(browar_obj)
         return browary_lista
     except requests.exceptions.RequestException as e:
-        print(f"❌ Wystąpił błąd podczas pobierania danych z API: {e}")
+        print(f"Brak połączenia z API: {e}")
         return []
 
 if __name__ == "__main__":
