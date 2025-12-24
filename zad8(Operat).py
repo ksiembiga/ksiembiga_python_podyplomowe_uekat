@@ -1,42 +1,76 @@
-from typing import List
 import requests
-import argparse
+import typing
+import json
+import dataclasses
 
-URL_API = 'https://api.openbrewerydb.org/v1/breweries'
-
-
-class Brewery:
-    def __init__(self, name):
+class Browar:
+    def __init__(self, id, name, brewery_type, address_1, address_2, address_3, city, state_province, postal_code, country, longitude, latitude, phone, website_url, state, street):
+        self.id = id
         self.name = name
-        # TODO: add rest of arguments
+        self.brewery_type = brewery_type
+        self.address_1 = address_1
+        self.address_2 = address_2
+        self.address_3 = address_3
+        self.city = city
+        self.state_province = state_province
+        self.postal_code = postal_code
+        self.country = country
+        self.longitude = longitude
+        self.latitude = latitude
+        self.phone = phone
+        self.website_url = website_url
+        self.state = state
+        self.street = street
+
 
     def __str__(self):
-        # TODO: return string describing class
-        pass
+        return str(f"Browar {self.name} typu {self.brewery_type}, "
+                   f" adres {self.address_1}, {self.address_2}, {self.address_3} w {self.city}, {self.state_province}, {self.postal_code}, {self.country}."            
+                   f"Telefon: {self.phone}, strona {self.website_url}"
+                   f"Stan i ulica: {self.state}, {self.street}"
+                   f" Jego współrzedne to {self.longitude} {self.latitude}"
+                   )
 
 
-def get_breweries_from_api(city: str|None) -> list:
-    if city is not None:
-        return requests.get(f'{URL_API}?by_city={city}').json()
+def pobierz_browary(api_url: str, limit: int = 20) -> list[Browar]:
 
-    return requests.get(URL_API).json()
+    params = {'per_page': limit}
+    try:
+        response = requests.get(api_url, params=params)
+        response.raise_for_status()
+
+        data: list[dict[str, any]] = response.json()
+        browary_lista: list[Browar] = []
+
+        for browar_dict in data:
+            browar_obj = Browar(**browar_dict)
+            browary_lista.append(browar_obj)
+        return browary_lista
+    except requests.exceptions.RequestException as e:
+        print(f"Brak połączenia z API: {e}")
+        return []
+
+print ("Wybierz miasto: ")
+miasto = input()
+
+if __name__ == "__main__":
+    api_url = "https://api.openbrewerydb.org/v1/breweries"
+    liczba_browarow = 20
+
+    browary_lista = pobierz_browary(api_url, liczba_browarow)
+    if browary_lista:
+        print("\n" + "=" * 80)
+        print(f"Wyświetlanie informacji dla {len(browary_lista)} browarów:")
+        print("=" * 80 + "\n")
+
+        for Browar in browary_lista:
+            # Wywołanie print(browar) automatycznie używa metody browar.__str__()
+            print(Browar)
+            # print("-" * 40) # opcjonalny separator
 
 
-def brewery_factory(breweries: list) -> List[Brewery]:
-    # TODO: run loop over all breweries to create list of Brewery
-    pass
-
-def get_args():
-    parser = argparse.ArgumentParser(description='Description of your program')
-    parser.add_argument('-c', '--city', help='Filter brewery by city', required=False)
-    return vars(parser.parse_args())
 
 
-def main():
-    args = get_args()
-    breweries = get_breweries_from_api(city=args['city'])
 
-    print(f'{breweries}')
-    print(f'{len(breweries)}')
 
-main()
+
