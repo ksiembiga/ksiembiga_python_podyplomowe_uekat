@@ -1,7 +1,8 @@
 import Property_classes
 
-class Property :
-    def __init__(self,area, rooms:int, price, address):
+
+class Property:
+    def __init__(self, area, rooms: int, price, address):
         self.area = area
         self.rooms = rooms
         self.price = price
@@ -9,7 +10,7 @@ class Property :
 
 
 class House(Property):
-    def __init__(self,area, rooms, price, address, plot:int):
+    def __init__(self, area, rooms, price, address, plot: int):
         self.area = area
         self.rooms = rooms
         self.price = price
@@ -18,6 +19,8 @@ class House(Property):
 
     def __str__(self):
         return f'Powierzchnia domu: {self.area}, pokoje: {self.rooms}, cena: {self.price}, adres:  {self.address}, powierzchnia działki:  {self.plot}'
+
+
 class Flat(Property):
     def __init__(self, area, rooms, price, address, floor):
         self.area = area
@@ -30,9 +33,8 @@ class Flat(Property):
         return f'Powierzchnia domu: {self.area}, pokoje: {self.rooms}, cena: {self.price}, adres:  {self.address}, ilośc poziomów:  {self.floor}'
 
 
-
-domek_w_gorach = House(area='200', rooms=8, price= '700000', address='ul. lesna12, ustron', plot=900)
-mieszkanie_w_miescie = Flat(area='80', rooms = 4, price ='450000', address='ul. Miejska, Bielsko-Biała', floor='1')
+domek_w_gorach=House(area='200', rooms=8, price='700000', address='ul. lesna12, ustron', plot=900)
+mieszkanie_w_miescie=Flat(area='80', rooms=4, price ='450000', address='ul. Miejska, Bielsko-Biała', floor='1')
 
 print(domek_w_gorach)
 print(mieszkanie_w_miescie)
