@@ -1,6 +1,3 @@
-import Real_estate_classes
-
-'''
 class Property:
     def __init__(self, area, rooms: int, price, address):
         self.area = area
@@ -31,10 +28,3 @@ class Flat(Property):
 
     def __str__(self):
         return f'Powierzchnia domu: {self.area}, pokoje: {self.rooms}, cena: {self.price}, adres:  {self.address}, ilośc poziomów:  {self.floor}'
-'''
-
-domek_w_gorach = Real_estate_classes.House(area='200', rooms=8, price='700000', address='ul. lesna12, ustron', plot=900)
-mieszkanie_w_miescie = Real_estate_classes.Flat(area='80', rooms=4, price='450000', address='ul. Miejska, Bielsko-Biała', floor='1')
-
-print(domek_w_gorach)
-print(mieszkanie_w_miescie)
