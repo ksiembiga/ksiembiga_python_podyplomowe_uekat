@@ -1,8 +1,3 @@
-
-
-
-
-def mnozenie(pierwszy,drugi):
+def mnozenie(pierwszy, drugi):
     wynik = pierwszy * drugi
-    return(wynik)
-
+    return wynik
