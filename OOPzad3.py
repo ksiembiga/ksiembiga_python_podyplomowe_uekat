@@ -33,8 +33,8 @@ class Flat(Property):
         return f'Powierzchnia domu: {self.area}, pokoje: {self.rooms}, cena: {self.price}, adres:  {self.address}, ilośc poziomów:  {self.floor}'
 
 
-domek_w_gorach=House(area='200', rooms=8, price='700000', address='ul. lesna12, ustron', plot=900)
-mieszkanie_w_miescie=Flat(area='80', rooms=4, price ='450000', address='ul. Miejska, Bielsko-Biała', floor='1')
+domek_w_gorach = House(area='200', rooms=8, price='700000', address='ul. lesna12, ustron', plot=900)
+mieszkanie_w_miescie = Flat(area='80', rooms=4, price='450000', address='ul. Miejska, Bielsko-Biała', floor='1')
 
 print(domek_w_gorach)
 print(mieszkanie_w_miescie)
