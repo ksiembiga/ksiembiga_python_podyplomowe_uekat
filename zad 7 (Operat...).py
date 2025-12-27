@@ -65,5 +65,4 @@ if __name__ == "__main__":
         print("=" * 80 + "\n")
 
         for Browar in browary_lista:
-
             print(Browar)
