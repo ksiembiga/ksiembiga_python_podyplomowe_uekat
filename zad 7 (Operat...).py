@@ -3,6 +3,8 @@ import typing
 import json
 import dataclasses
 
+#klasa browar i wyswietlanie
+
 
 class Browar:
     def __init__(self, id, name, brewery_type, address_1, address_2, address_3, city, state_province, postal_code, country, longitude, latitude, phone, website_url, state, street):
